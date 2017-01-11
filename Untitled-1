@@ -1,0 +1,12 @@
+package fizzbuzz;
+
+import org.junit.*;
+
+public class fizzbuzzTest {
+
+@Test theFirstNumberInTheListIs1(){
+   
+}
+
+}
+
