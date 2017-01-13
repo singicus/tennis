@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "git.path": "https://github.com/singicus/fizzbuzz",
+
+    "git.enabled": true
+}
