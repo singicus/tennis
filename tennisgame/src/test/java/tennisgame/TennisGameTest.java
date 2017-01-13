@@ -27,7 +27,7 @@ public class TennisGameTest {
     @Test
     public void loveShouldBeDescriptionForScore0() {
         Game game = new Game(victor, sarah);
-        assertThat(game, hasProperty("score"));//, is("love, love")));
+        assertThat(game, hasProperty("score", is("love, love")));
     }
 /*
     @Test
