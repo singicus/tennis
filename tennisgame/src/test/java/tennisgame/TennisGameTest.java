@@ -1,5 +1,6 @@
 
 package tennisgame;
+
 import org.junit.Before;
 import org.junit.Test;
  
@@ -15,7 +16,7 @@ import java.util.List;
 public class TennisGameTest {
     Player victor;
     Player sarah;
-    Game game;
+    Game game; 
 
   @Before
     public void beforeGameTest() {
@@ -23,19 +24,19 @@ public class TennisGameTest {
         sarah = new Player("Sarah");
         game = new Game(victor, sarah);
     }
- 
+
     @Test
     public void loveShouldBeDescriptionForScore0() {
         Game game = new Game(victor, sarah);
         assertThat(game, hasProperty("score", is("love, love")));
     }
-/*
+
     @Test
     public void fifteenShouldBeDescriptionForScore1() {
         sarah.winBall();
         assertThat(game, hasProperty("score", is("love, fifteen")));
     }
- 
+
     @Test
     public void thirtyShouldBeDescriptionForScore2() {
         victor.winBall();
@@ -43,25 +44,28 @@ public class TennisGameTest {
         sarah.winBall();
         assertThat(game, hasProperty("score", is("thirty, fifteen")));
     }
+
     @Test
     public void fortyShouldBeDescriptionForScore3() {
-        IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-                victor.winBall();
-        });
+        victor.winBall();
+        victor.winBall();
+        victor.winBall();
         assertThat(game, hasProperty("score", is("forty, love")));
     }
- 
+
+  
     @Test
     public void advantageShouldBeDescriptionWhenLeastThreePointsHaveNeenScoredByEachSideAndPlayerHasOnePointMoreThanHisOpponent() {
-        IntStream.rangeClosed(1, 3).forEach((Integer) -> {
-            victor.winBall();
-        });
-        IntStream.rangeClosed(1, 4).forEach((Integer) -> {
-            sarah.winBall();
-        });
+        victor.winBall();
+        victor.winBall();
+        victor.winBall();
+        sarah.winBall();
+        sarah.winBall();
+        sarah.winBall();
+        sarah.winBall();
         assertThat(game, hasProperty("score", is("advantage Sarah")));
     }
- 
+
     @Test
     public void deuceShouldBeDescriptionWhenAtLeastThreePointsHaveBeenScoredByEachPlayerAndTheScoresAreEqual() {
         for(int index = 1; index <= 3; index++) {
@@ -76,7 +80,7 @@ public class TennisGameTest {
         sarah.winBall();
         assertThat(game, hasProperty("score", is("deuce")));
     }
- 
+
     @Test
     public void gameShouldBeWonByTheFirstPlayerToHaveWonAtLeastFourPointsInTotalAndWithAtLeastTwoPointsMoreThanTheOpponent() {
         for(int index = 1; index <= 4; index++) {
@@ -90,5 +94,5 @@ public class TennisGameTest {
         victor.winBall();
         assertThat(game, hasProperty("score", is("Victor won")));
     }
- */
+ 
 }
